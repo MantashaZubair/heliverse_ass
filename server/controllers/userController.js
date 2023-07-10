@@ -49,7 +49,7 @@ const ITEM_PER_PAGE= 20
         try {
             const skip = (page-1) * ITEM_PER_PAGE;
             const count = await userModels.estimatedDocumentCount(query)
-            const user = await userModels.find(query).skip(skip).limit(ITEM_PER_PAGE)
+            const user = await userModels.find(query).skip(skip).limit(ITEM_PER_PAGE).sort({createdAt: -1})
             const pagecount = Math.floor(count / ITEM_PER_PAGE)
             res.status(200).json({
                pagination:{
