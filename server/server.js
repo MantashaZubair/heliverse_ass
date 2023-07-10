@@ -21,7 +21,7 @@ app.get("/",(req,res)=>{
 })
 "app.use("/api" , userRoutes)
 
-const PORT = 8080
+const PORT = process.env.PORT
 app.listen(PORT, ()=>{
     console.log(`server started port at ${PORT}`)
 })
