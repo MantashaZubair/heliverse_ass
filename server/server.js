@@ -15,7 +15,11 @@ app.use(cors())
 //database connection
 connectDB()
 //routes
-app.use("/api" , userRoutes)
+app.get("/",(req,res)=>{
+    res.setHeader("Access-Control-Allow-Credentials","true");
+    res.send("API is running..");
+})
+"app.use("/api" , userRoutes)
 
 const PORT = 8080
 app.listen(PORT, ()=>{
